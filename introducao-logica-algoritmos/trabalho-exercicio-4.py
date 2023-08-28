@@ -13,7 +13,7 @@ lista_colaboradores = []
 id_global = 0
 
 def formatar_print(colaborador):
-    print('Dados do Colaborador: \n'
+    print('\nDados do Colaborador: \n'
           'ID: %s \n'
           'NOME: %s \n'
           'SETOR: %s \n'
@@ -35,10 +35,12 @@ def cadastrar_colaborador(id):
         'pagamento': pagamento
     }
     lista_colaboradores.append(colaborador)
+    formatar_print(colaborador)
     global id_global
     id_global += 1
 
 def consultar_colaborador():
+    print("---------------------------------MENU DE CONSULTA----------------------------------")
     opcao = input('Escolha a opção desejada: \n'
           '1. Consultar todos\n'
           '2. Consultar por Id\n'
@@ -58,6 +60,7 @@ def consultar_colaborador():
                 formatar_print(colaborador)
 
 def remover_colaborador():
+    print("---------------------------MENU DE REMOÇÃO DE COLABORADOR--------------------------")
     id = input('por favor digite o Id do colaborador que deseja remover: ')
     try:
         lista_colaboradores.pop(int(id))
@@ -69,7 +72,7 @@ def remover_colaborador():
 #cadastrar_colaborador(1)
 #print(lista_colaboradores)
 
-print("Bem-vindo ao Sistema de Cadastro do Gabriel Francisco")
+print("Bem-vindo ao Sistema de Gestão de Colaboradores de Gabriel Francisco")
 while(True):
     print("---------------------------------MENU PRINCIPAL------------------------------------")
     opcao = input('O que você deseja fazer: \n'
@@ -91,6 +94,7 @@ while(True):
     elif opcao == '3':
         remover_colaborador()
     elif opcao == '4':
+        print('Obrigado por usar o Sistema de Gestão de Colaboradores de Gabriel Francisco, volte sempre!')
         break
     else:
         print('Opção inválida! Tente novamente.')
